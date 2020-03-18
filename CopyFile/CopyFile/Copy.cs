@@ -15,7 +15,8 @@ namespace CopyFile
 
             Directory.CreateDirectory(targetPath);
 
-            CopyFileToDest(files, targetPath);
+            if (Directory.Exists(targetPath))
+                CopyFileToDest(files, targetPath);
 
             foreach (var directory in directories)
             {
